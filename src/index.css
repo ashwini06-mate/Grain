@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-forest: #183d2b;
+  --color-olive: #657c43;
+  --color-cream: #f8f5eb;
+  --color-wheat: #d6a84f;
+  --color-ink: #25291f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: #f8f5eb;
+  color: #25291f;
+}
+
+body.nav-lock {
+  overflow: hidden;
+}
+
+h1,
+h2,
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: #d6a84f;
+  color: #183d2b;
+}
+
+:focus-visible {
+  outline: 2px solid #d6a84f;
+  outline-offset: 3px;
+}
+
+.paper {
+  background-image: radial-gradient(rgba(24, 61, 43, 0.045) 0.7px, transparent 0.7px);
+  background-size: 7px 7px;
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(24, 61, 43, 0.16);
+  background: #fff;
+  padding: 0.8rem 0.95rem;
+  font-size: 0.95rem;
+  color: #25291f;
+}
+
+.field:focus {
+  border-color: #183d2b;
+  outline: none;
+}
